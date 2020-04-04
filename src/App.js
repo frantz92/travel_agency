@@ -10,7 +10,6 @@ import Trips from './components/views/Trips/TripsContainer';
 import Countries from './components/views/Countries/CountriesContainer';
 import Regions from './components/views/Regions/RegionsContainer';
 
-// TODO - import other views
 import Info from './components/views/Info/Info';
 import NotFound from './components/views/NotFound/NotFound';
 
@@ -45,8 +44,6 @@ class App extends React.Component {
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/countries' component={Countries} />
             <Route exact path='/regions' component={Regions} />
-
-            {/* TODO - add more routes for other views */}
             <Route exact path='/info' component={Info} />
             <Route path='*' component={NotFound} />
           </Switch>

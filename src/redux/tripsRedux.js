@@ -9,6 +9,7 @@ export const getFilteredTrips = ({trips, filters}) => {
   if(filters.searchPhrase){
     const pattern = new RegExp(filters.searchPhrase, 'i');
     output = output.filter(trip => pattern.test(trip.name));
+    console.log(filters);
   }
 
   // TODO - filter by duration

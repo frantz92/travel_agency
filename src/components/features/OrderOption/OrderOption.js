@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './OrderOption.scss';
+
 import OrderOptionCheckboxes from './OrderOptionCheckboxes';
 import OrderOptionDropdown from './OrderOptionDropdown';
 import OrderOptionIcons from './OrderOptionIcons';
@@ -13,7 +13,7 @@ const optionTypes = {
   number: OrderOptionNumber,
 };
 
-const OrderOption = ({name, type, ...otherProps}) => {
+const OrderOption = ({name, type, id, setOrderOption, ...otherProps}) => {
   const OptionComponent = optionTypes[type];
   if(!OptionComponent){
     return null;
@@ -23,14 +23,12 @@ const OrderOption = ({name, type, ...otherProps}) => {
         <h3 className={styles.title}>{name}</h3>
         <OptionComponent
           {...otherProps}
+          setOptionValue={value => setOrderOption({[id]: value})}
         />
       </div>
     );
   }
 };
 
-OrderOption.propTypes = {
-  name: PropTypes.string,
-};
 
 export default OrderOption;

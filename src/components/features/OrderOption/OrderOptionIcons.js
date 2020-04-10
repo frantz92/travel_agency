@@ -12,6 +12,7 @@ const OrderOptionIcons = ({values, required, currentValue, setOptionValue}) => (
       <div
         className={currentValue === '' ? `${styles.icon} ${styles.iconActive}` : styles.icon}
         onClick={() => setOptionValue('')}
+        value=""
       >
         <Icon name="times-circle"/>none
       </div>

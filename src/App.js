@@ -50,7 +50,7 @@ class App extends React.Component {
             atActive={{ opacity: 1 }}
             className={styles.switchWrapper}
           >
-            <Route exact path='/' component={Home} />
+            <Route exact path='/home' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/trip/:id' component={Trip} />
             <Route exact path='/countries' component={Countries} />

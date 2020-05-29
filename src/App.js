@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter, Route} from 'react-router-dom';
-import {AnimatedSwitch} from 'react-router-transition';
+import { connect } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
 import PropTypes from 'prop-types';
 import styles from './styles/global.scss';
 
@@ -19,7 +19,7 @@ import Info from './components/views/Info/Info';
 import NotFound from './components/views/NotFound/NotFound';
 
 import parseTrips from './utils/parseTrips';
-import {setMultipleStates} from './redux/globalRedux';
+import { setMultipleStates } from './redux/globalRedux';
 
 class App extends React.Component {
   static propTypes = {
@@ -27,22 +27,22 @@ class App extends React.Component {
     setStates: PropTypes.func,
   }
 
-  constructor(props){
+  constructor(props) {
     super(props);
     // parse trips when App is first created
     parseTrips(this.props.trips, this.props.setStates);
   }
 
-  componentDidUpdate(prevProps){
-    if(prevProps.trips != this.props.trips){
+  componentDidUpdate(prevProps) {
+    if (prevProps.trips != this.props.trips) {
       // parse trips again if they changed
       parseTrips(this.props.trips, this.props.setStates);
     }
   }
 
-  render(){
+  render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <MainLayout>
           <AnimatedSwitch
             atEnter={{ opacity: 0 }}

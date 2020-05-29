@@ -42,7 +42,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <MainLayout>
           <AnimatedSwitch
             atEnter={{ opacity: 0 }}
@@ -50,7 +50,7 @@ class App extends React.Component {
             atActive={{ opacity: 1 }}
             className={styles.switchWrapper}
           >
-            <Route exact path='/home' component={Home} />
+            <Route exact path='/' component={Home} />
             <Route exact path='/trips' component={Trips} />
             <Route exact path='/trip/:id' component={Trip} />
             <Route exact path='/countries' component={Countries} />
